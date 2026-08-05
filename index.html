@@ -157,7 +157,7 @@
 
     /* ─── IMAGEN / SKETCH ─── */
     .sketch {
-      height: 220px;
+      aspect-ratio: 1 / 1;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -170,7 +170,35 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+      object-position: center;
       display: block;
+      transition: transform 0.3s ease;
+    }
+    .card:hover .sketch img { transform: scale(1.03); }
+
+    /* ─── MINIATURAS DE COLOR ─── */
+    .color-thumbs {
+      display: flex;
+      gap: 6px;
+      padding-top: 14px;
+      flex-wrap: wrap;
+    }
+    .color-thumb {
+      width: 44px;
+      height: 44px;
+      border-radius: 4px;
+      object-fit: cover;
+      object-position: center;
+      cursor: pointer;
+      border: 2px solid transparent;
+      opacity: 0.55;
+      transition: opacity 0.15s ease, border-color 0.15s ease;
+      flex-shrink: 0;
+    }
+    .color-thumb:hover { opacity: 0.85; }
+    .color-thumb.active {
+      opacity: 1;
+      border-color: var(--gold);
     }
     .sketch-inner {
       position: relative;
@@ -419,7 +447,7 @@
     <!-- NRT-001 -->
     <div class="card">
       <div class="sketch">
-        <img src="img/mesa-120-negro.jpg" alt="Mesa sin repisa 120cm — NORTEC">
+        <img src="img/mesa-120-negro.jpg" alt="Mesa sin repisa 120cm — NORTEC" class="main-img">
         <span class="sketch-ref">NRT-001</span>
         <span class="sketch-badge">Mesa</span>
       </div>
@@ -430,7 +458,12 @@
         <div class="card-chips">
           <span class="chip gold">Tubo 2"×2"</span>
           <span class="chip">120 × 50 × 75 cm</span>
-          <span class="chip">4 colores</span>
+        </div>
+        <div class="color-thumbs">
+          <img class="color-thumb active" src="img/mesa-120-negro.jpg" data-src="img/mesa-120-negro.jpg" title="Negro">
+          <img class="color-thumb" src="img/mesa-120-blanco.jpg" data-src="img/mesa-120-blanco.jpg" title="Blanco">
+          <img class="color-thumb" src="img/mesa-120-caramelo.jpg" data-src="img/mesa-120-caramelo.jpg" title="Caramelo">
+          <img class="color-thumb" src="img/mesa-120-nogal-terracota.jpg" data-src="img/mesa-120-nogal-terracota.jpg" title="Nogal terracota">
         </div>
         <div class="card-foot">
           <div>
@@ -535,7 +568,7 @@
     <!-- NRT-005 / MODELO I -->
     <div class="card">
       <div class="sketch">
-        <img src="img/mesa-i-negro.jpg" alt="Mesa Modelo I — NORTEC">
+        <img src="img/mesa-i-negro.jpg" alt="Mesa Modelo I — NORTEC" class="main-img">
         <span class="sketch-ref">NRT-005</span>
         <span class="sketch-badge">Modelo I</span>
       </div>
@@ -545,8 +578,13 @@
         <p class="card-desc">Base central en I para un look más limpio y moderno. Más espacio libre en los pies, ideal para silla gamer con apoyabrazos.</p>
         <div class="card-chips">
           <span class="chip gold">Base en I</span>
-          <span class="chip">4 colores</span>
           <span class="chip">150 × 60 × 75 cm</span>
+        </div>
+        <div class="color-thumbs">
+          <img class="color-thumb active" src="img/mesa-i-negro.jpg" data-src="img/mesa-i-negro.jpg" title="Negro">
+          <img class="color-thumb" src="img/mesa-i-blanca.jpg" data-src="img/mesa-i-blanca.jpg" title="Blanco">
+          <img class="color-thumb" src="img/mesa-i-caramelo.jpg" data-src="img/mesa-i-caramelo.jpg" title="Caramelo">
+          <img class="color-thumb" src="img/mesa-i-terracota.jpg" data-src="img/mesa-i-terracota.jpg" title="Terracota">
         </div>
         <div class="card-foot">
           <div>
@@ -593,7 +631,7 @@
     <!-- NRT-007 / CAJONERA -->
     <div class="card">
       <div class="sketch">
-        <img src="img/cajonera-blanca.jpg" alt="Cajonera 3 cajones — NORTEC">
+        <img src="img/cajonera-blanca.jpg" alt="Cajonera 3 cajones — NORTEC" class="main-img">
         <span class="sketch-ref">NRT-007</span>
         <span class="sketch-badge">Cajonera</span>
       </div>
@@ -603,8 +641,12 @@
         <p class="card-desc">Mantén tu setup organizado. Tres cajones de fácil acceso para periféricos, cables y accesorios. Va perfecto al lado de tu mesa.</p>
         <div class="card-chips">
           <span class="chip gold">3 cajones</span>
-          <span class="chip">3 colores</span>
           <span class="chip">40 × 58 × 70 cm</span>
+        </div>
+        <div class="color-thumbs">
+          <img class="color-thumb active" src="img/cajonera-blanca.jpg" data-src="img/cajonera-blanca.jpg" title="Blanca">
+          <img class="color-thumb" src="img/cajonera-negra.jpg" data-src="img/cajonera-negra.jpg" title="Negra">
+          <img class="color-thumb" src="img/cajonera-negro-caramelo.jpg" data-src="img/cajonera-negro-caramelo.jpg" title="Negro + Caramelo">
         </div>
         <div class="card-foot">
           <div>
@@ -770,5 +812,16 @@
   </div>
 </footer>
 
+<script>
+  document.querySelectorAll('.color-thumb').forEach(thumb => {
+    thumb.addEventListener('click', function() {
+      const card = this.closest('.card');
+      const mainImg = card.querySelector('.main-img');
+      mainImg.src = this.dataset.src;
+      card.querySelectorAll('.color-thumb').forEach(t => t.classList.remove('active'));
+      this.classList.add('active');
+    });
+  });
+</script>
 </body>
 </html>
