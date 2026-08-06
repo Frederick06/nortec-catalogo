@@ -391,10 +391,19 @@
     }
     .cta-btn:hover { opacity: 0.88; }
 
+    /* ─── PRICE NOTE ─── */
+    .price-note {
+      display: block;
+      font-size: 10px;
+      color: var(--dim);
+      margin-top: 4px;
+      font-style: italic;
+    }
+
     /* ─── FOOTER ─── */
     .footer {
       border-top: 1px solid var(--border);
-      padding: 32px 60px;
+      padding: 36px 60px;
       max-width: 1280px;
       margin: 0 auto;
       display: flex;
@@ -410,9 +419,193 @@
       text-transform: uppercase;
       color: var(--gold);
     }
+    .footer-links {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .footer-link {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      color: var(--dim2);
+      text-decoration: none;
+      transition: color 0.15s ease;
+    }
+    .footer-link:hover { color: var(--gold); }
+    .footer-right {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      text-align: right;
+    }
     .footer-note {
       font-size: 11px;
       color: var(--dim);
+      font-weight: 300;
+    }
+
+    /* ─── FAB LINE ─── */
+    .header-fab {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 20px;
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 500;
+      opacity: 0.8;
+    }
+    .header-fab::before {
+      content: '◆';
+      font-size: 6px;
+      opacity: 0.6;
+    }
+
+    /* ─── TESTIMONIOS ─── */
+    .testimonios {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 72px 60px;
+    }
+    .testimonios-eyebrow {
+      font-size: 10px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 500;
+      margin-bottom: 16px;
+    }
+    .testimonios-title {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: clamp(28px, 4vw, 44px);
+      font-weight: 300;
+      letter-spacing: -0.5px;
+      margin-bottom: 48px;
+      color: var(--text);
+    }
+    .testimonios-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+    }
+    .testimonio {
+      background: var(--bg);
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .testimonio-img {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      border-radius: 4px;
+      background: var(--surface2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--dim);
+      font-size: 12px;
+      letter-spacing: 1px;
+    }
+    .testimonio-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 4px;
+      display: block;
+    }
+    .testimonio-quote {
+      font-size: 14px;
+      line-height: 1.7;
+      color: var(--dim2);
+      font-weight: 300;
+      font-style: italic;
+    }
+    .testimonio-author {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .testimonio-name {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text);
+    }
+    .testimonio-city {
+      font-size: 11px;
+      color: var(--dim);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    .testimonio-model {
+      font-size: 10px;
+      color: var(--gold);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+
+    /* ─── CÓMO FUNCIONA ─── */
+    .como-funciona {
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      background: var(--surface);
+    }
+    .como-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 72px 60px;
+    }
+    .como-eyebrow {
+      font-size: 10px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 500;
+      margin-bottom: 16px;
+    }
+    .como-title {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: clamp(28px, 4vw, 44px);
+      font-weight: 300;
+      letter-spacing: -0.5px;
+      margin-bottom: 48px;
+      color: var(--text);
+    }
+    .pasos {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 40px;
+    }
+    .paso {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .paso-num {
+      font-size: 36px;
+      font-weight: 200;
+      color: var(--gold);
+      line-height: 1;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      opacity: 0.5;
+    }
+    .paso-title {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text);
+    }
+    .paso-desc {
+      font-size: 13px;
+      color: var(--dim2);
+      line-height: 1.7;
       font-weight: 300;
     }
 
@@ -453,6 +646,7 @@
     <div class="header-eyebrow">NORTEC · Catálogo 2026</div>
     <h1 class="header-title">Mesas hechas<br>para tu <strong>setup.</strong></h1>
     <p class="header-desc">Estructura metálica de alta resistencia, diseño limpio. Cada mesa se fabrica a medida en Trujillo con materiales de primera.</p>
+    <p class="header-fab">Fabricación en 5–7 días hábiles · Entrega en Trujillo</p>
   </div>
 </header>
 
@@ -570,6 +764,7 @@
           <span class="chip gold">Con repisa</span>
           <span class="chip">Repisa 150×20×10 cm</span>
           <span class="chip">Triple monitor</span>
+          <span class="chip">Foto referencial</span>
         </div>
         <div class="card-foot">
           <div>
@@ -638,6 +833,7 @@
           <div>
             <span class="price-label">Precio desde</span>
             <div class="price"><sup>S/</sup>450</div>
+            <span class="price-note">Varía según medida final</span>
           </div>
           <div class="dim-wrap">
             <span class="dim-label">Medidas (cm)</span>
@@ -702,6 +898,7 @@
           <div class="dim-wrap">
             <span class="dim-label">Medidas (cm)</span>
             <div class="dim-val">Según mesa elegida</div>
+            <span class="price-note">Compatible con Modelo S, I, M+ y XL</span>
           </div>
         </div>
       </div>
@@ -794,6 +991,71 @@
   </div>
 </main>
 
+<!-- TESTIMONIOS -->
+<section class="testimonios">
+  <div class="testimonios-eyebrow">Clientes reales</div>
+  <h2 class="testimonios-title">Setups armados con Nortec</h2>
+  <div class="testimonios-grid">
+    <div class="testimonio">
+      <div class="testimonio-img" style="background:var(--surface2);height:200px;border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:11px;letter-spacing:1px;color:var(--dim);">FOTO DEL SETUP</div>
+      <p class="testimonio-quote">"La mesa llegó perfecta, exactamente a la medida que pedí. Ya llevo 3 meses usándola para trabajar y jugar y no le falta nada."</p>
+      <div class="testimonio-author">
+        <span class="testimonio-name">Carlos M.</span>
+        <span class="testimonio-city">Trujillo</span>
+        <span class="testimonio-model">Mesa Modelo K · 150cm</span>
+      </div>
+    </div>
+    <div class="testimonio">
+      <div class="testimonio-img" style="background:var(--surface2);height:200px;border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:11px;letter-spacing:1px;color:var(--dim);">FOTO DEL SETUP</div>
+      <p class="testimonio-quote">"Buscaba algo que aguante todo el equipo y se vea bien. NORTEC cumplió en todo — precio, calidad y entrega en tiempo."</p>
+      <div class="testimonio-author">
+        <span class="testimonio-name">Andrea R.</span>
+        <span class="testimonio-city">Trujillo</span>
+        <span class="testimonio-model">Mesa en L · Corner</span>
+      </div>
+    </div>
+    <div class="testimonio">
+      <div class="testimonio-img" style="background:var(--surface2);height:200px;border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:11px;letter-spacing:1px;color:var(--dim);">FOTO DEL SETUP</div>
+      <p class="testimonio-quote">"Me hicieron la mesa a una medida rara que ningún mueblería normal acepta. La terminaron en 6 días y quedó impecable."</p>
+      <div class="testimonio-author">
+        <span class="testimonio-name">Diego V.</span>
+        <span class="testimonio-city">Trujillo</span>
+        <span class="testimonio-model">Setup Completo</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CÓMO FUNCIONA -->
+<section class="como-funciona">
+  <div class="como-inner">
+    <div class="como-eyebrow">Sin complicaciones</div>
+    <h2 class="como-title">¿Cómo funciona el pedido?</h2>
+    <div class="pasos">
+      <div class="paso">
+        <span class="paso-num">01</span>
+        <span class="paso-title">Elige tu modelo y color</span>
+        <p class="paso-desc">Navega el catálogo, selecciona el modelo que más te gusta y el color de melamine que va con tu espacio.</p>
+      </div>
+      <div class="paso">
+        <span class="paso-num">02</span>
+        <span class="paso-title">Escríbenos por WhatsApp</span>
+        <p class="paso-desc">Toca el botón verde en cualquier producto. Te respondemos en minutos para confirmar medidas, color y precio final.</p>
+      </div>
+      <div class="paso">
+        <span class="paso-num">03</span>
+        <span class="paso-title">Fabricamos tu mesa</span>
+        <p class="paso-desc">Una vez confirmado el pedido, la fabricamos en 5 a 7 días hábiles con materiales de primera calidad.</p>
+      </div>
+      <div class="paso">
+        <span class="paso-num">04</span>
+        <span class="paso-title">Entrega en Trujillo</span>
+        <p class="paso-desc">Coordinamos la entrega directamente contigo. También puedes recogerla en nuestro taller en Trujillo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- CTA -->
 <section>
   <div class="cta-section">
@@ -801,7 +1063,7 @@
       <h2>¿Quieres un modelo <strong>a tu medida?</strong></h2>
       <p>Todos los productos se fabrican a pedido. Escríbenos con tus medidas y colores.</p>
     </div>
-    <a href="https://wa.me/51999999999?text=Hola%2C%20vi%20el%20cat%C3%A1logo%20NORTEC%20y%20quiero%20cotizar" class="cta-btn" target="_blank" rel="noopener">
+    <a href="https://wa.me/51907309806?text=Hola%2C%20vi%20el%20cat%C3%A1logo%20NORTEC%20y%20quiero%20cotizar" class="cta-btn" target="_blank" rel="noopener">
       Cotizar por WhatsApp
     </a>
   </div>
@@ -811,8 +1073,20 @@
 <footer>
   <div class="footer">
     <span class="footer-brand">NORTEC</span>
-    <span class="footer-note">Todos los modelos disponibles a medida · Consultar colores y acabados</span>
-    <span class="footer-note">Trujillo, Perú · 2025</span>
+    <div class="footer-links">
+      <a href="https://wa.me/51907309806" class="footer-link" target="_blank" rel="noopener">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        +51 907 309 806
+      </a>
+      <a href="https://instagram.com/nortec.trujillo" class="footer-link" target="_blank" rel="noopener">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        @nortec.trujillo
+      </a>
+    </div>
+    <div class="footer-right">
+      <span class="footer-note">Lun–Sáb · 9am–6pm · Trujillo, Perú</span>
+      <span class="footer-note">¿Tienes dudas? <a href="https://wa.me/51907309806" style="color:var(--gold);text-decoration:none;">Escríbenos</a></span>
+    </div>
   </div>
 </footer>
 
