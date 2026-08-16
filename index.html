@@ -1114,7 +1114,10 @@
   // Botón WhatsApp en cada card
   document.querySelectorAll('.card').forEach(card => {
     const name = card.querySelector('.card-name')?.textContent?.trim() || 'un producto';
-    const msg = encodeURIComponent(`Hola, vi el catálogo NORTEC y quiero cotizar: ${name}`);
+    const priceEl = card.querySelector('.price');
+    const price = priceEl ? priceEl.textContent.trim().replace(/\s+/g, '') : '';
+    const priceText = price ? ` — Precio: S/${price}` : '';
+    const msg = encodeURIComponent(`Hola, vi el catálogo NORTEC y quiero pedir: ${name}${priceText}`);
     const btn = document.createElement('a');
     btn.href = `https://wa.me/${WA_NUMBER}?text=${msg}`;
     btn.target = '_blank';
